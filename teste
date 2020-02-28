@@ -1,0 +1,26 @@
+package com.mycompany.projetoferias;
+
+import javax.swing.JOptionPane;
+
+/**
+ *
+ * @author ericklys
+ */
+public class Teste {
+    public static void main(String[] args) {
+        
+        int novaEdicao1 = Integer.parseInt(JOptionPane.showInputDialog("Digite o número da edição a ser recebida pelo(s) assinante(s)"));
+       
+        int novaEdicao2 = Integer.parseInt(JOptionPane.showInputDialog("Digite o número da edição a ser recebida pelo(s) assinante(s)"));
+        
+        Veja ve = new Veja();
+        Epoca epc = new Epoca();
+        
+        Assinante1 assinante1 = new Assinante1(ve);
+        Assinante2 assinante2 = new Assinante2(epc);
+        
+        ve.setNovaEdicao(novaEdicao1);
+        epc.setNovaEdicao(novaEdicao2);
+        
+    }
+}
