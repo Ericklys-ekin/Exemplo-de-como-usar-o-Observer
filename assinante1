@@ -1,0 +1,31 @@
+package com.mycompany.projetoferias;
+
+import java.util.Observable;
+import java.util.Observer;
+/**
+ *
+ * @author ericklys
+ */
+class Assinante1 implements Observer {
+
+    Observable veja;
+    
+    int edicaoNovaRevista;
+    
+    public Assinante1(Observable veja){
+        this.veja = veja;
+        veja.addObserver(this);
+    }
+    
+    
+    
+    @Override
+    public void update(Observable revistaInfSubject, Object arg1) {
+        if(revistaInfSubject instanceof Veja){
+            Veja vej = (Veja) revistaInfSubject;
+            edicaoNovaRevista = vej.getEdicao();
+            System.out.println("Atenção, já chegou a mais uma edição da Revista veja.Esta é a edição número:" +edicaoNovaRevista);
+        }
+    }
+    
+}
